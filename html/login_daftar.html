@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk / Daftar — NEXORA MARKET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-butuh-login="false">
+
+  <!-- NAVBAR SIMPEL -->
+  <nav class="navbar-nexora">
+      <a href="../index.html" class="brand-logo-nexora">NEXORA<span>.</span></a>
+      <button type="button" class="btn-toggle-theme" title="Ubah Tema">🌙</button>
+    <a href="../index.html" class="btn-dock-login">← Kembali ke Beranda</a>
+  </nav>
+
+  <div class="auth-wrapper">
+    <div class="kartu-auth-slider">
+      
+      <!-- TAB TOGGLE MASUK / DAFTAR -->
+      <div class="auth-header-toggle">
+        <button type="button" id="tabBtnMasuk" class="auth-tab-btn active">Masuk Akun</button>
+        <button type="button" id="tabBtnDaftar" class="auth-tab-btn">Daftar Baru</button>
+      </div>
+
+      <!-- FORM 1: MASUK (LOGIN) -->
+      <div id="formContainerMasuk" class="form-masuk">
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Selamat Datang! 👋</h2>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 20px;">Masukkan email dan kata sandi akunmu.</p>
+        
+        <form autocomplete="off">
+          <div class="form-grup">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="contoh@email.com" required>
+          </div>
+
+          <div class="form-grup">
+            <label for="loginPassword">Kata Sandi</label>
+            <div class="password-wrapper">
+              <input type="password" id="loginPassword" placeholder="••••••••" required>
+              <button type="button" class="btn-toggle-pwd" data-target="loginPassword">👁️</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-auth-submit">Masuk ke Akun</button>
+        </form>
+      </div>
+
+      <!-- FORM 2: DAFTAR (REGISTER) -->
+      <div id="formContainerDaftar" class="form-daftar" hidden>
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">Buat Akun Baru 🚀</h2>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 20px;">Daftar gratis untuk mulai belanja di Nexora.</p>
+        
+        <form autocomplete="off">
+          <div class="form-grup">
+            <label for="regNama">Nama Lengkap</label>
+            <input type="text" id="regNama" placeholder="Nama lengkap Anda" required>
+          </div>
+
+          <div class="form-grup">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail" placeholder="contoh@email.com" required>
+          </div>
+
+          <div class="form-grup">
+            <label for="regTanggalLahir">Tanggal Lahir</label>
+            <input type="date" id="regTanggalLahir" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-grup">
+              <label for="regUmur">Usia (Tahun)</label>
+              <input type="number" id="regUmur" placeholder="0" readonly required>
+            </div>
+            <div class="form-grup">
+              <label for="regGender">Jenis Kelamin</label>
+              <select id="regGender" required>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grup">
+            <label for="regPassword">Kata Sandi</label>
+            <div class="password-wrapper">
+              <input type="password" id="regPassword" placeholder="Minimal 8 karakter" required>
+              <button type="button" class="btn-toggle-pwd" data-target="regPassword">👁️</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-auth-submit">Daftar Sekarang</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

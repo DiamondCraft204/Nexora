@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Eksplorasi — NEXORA MARKET</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-butuh-login="true">
+
+    <!-- FLOATING DOCK NAVBAR -->
+    <!-- FLOATING DOCK NAVBAR -->
+    <nav class="navbar-nexora">
+        <a href="bagianDalam.html" class="brand-logo-nexora">NEXORA<span>.</span></a>
+
+        <div class="search-capsule">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="inputPencarian" placeholder="Cari kemeja, sneakers, setup PC..." autocomplete="off">
+        </div>
+
+        <div class="nav-action-group">
+            <!-- Tombol About di samping tombol Tema -->
+            <button type="button" id="btnBukaAbout" class="btn-about-icon" title="Tentang Nexora Market">ⓘ</button>
+            <button type="button" class="btn-toggle-theme" title="Ubah Tema">🌙</button>
+
+            <a href="keranjang.html" class="tombol-keranjang" title="Keranjang Belanja">
+                🛒 <span class="badge-keranjang" hidden>0</span>
+            </a>
+            <span id="greetingArea" class="user-greeting" hidden></span>
+            <a href="profile.html" id="navProfile" class="btn-dock-profile" hidden>Profil</a>
+            <a href="login_daftar.html" id="navAuth" class="btn-dock-login">Masuk / Daftar</a>
+        </div>
+    </nav>
+
+    <!-- POP-UP MODAL ABOUT -->
+    <div id="modalAbout" class="overlay-produk" hidden>
+        <div class="kartu-modal-produk modal-about-card">
+            <button type="button" class="tutup-modal-produk" id="btnTutupAbout">×</button>
+            <div class="modal-about-icon-big">ⓘ</div>
+            <h3 class="modal-about-judul">Tentang NEXORA MARKET</h3>
+            <p class="modal-about-deskripsi">
+                <strong>NEXORA Market</strong> adalah platform e-commerce katalog terkurasi masa depan dengan arsitektur
+                modern. Kami menghubungkan produk berkualitas standar ekspor langsung ke tangan Anda.
+            </p>
+            <div class="modal-about-versi">
+                Versi 2.0.26 — Crafted with Minimalist Future-UI
+            </div>
+        </div>
+    </div>
+
+    <!-- BENTO SHOWCASE HERO (INTERNAL) -->
+    <section class="bento-hero-section">
+        <!-- Bento 1: Promo Utama -->
+        <div class="bento-box bento-main">
+            <span class="bento-tag">Nexora Member Exclusive</span>
+            <h2>Promo Festival Belanja 2026.</h2>
+            <p>Bebas ongkir ke seluruh Indonesia, cashback instan mingguan, dan jaminan produk 100% orisinal.</p>
+            <a href="#katalogProduk" class="bento-cta">Mulai Belanja ↓</a>
+        </div>
+
+        <!-- Bento 2: Voucher Box -->
+        <div class="bento-box bento-sub1">
+            <div class="bento-icon">🎟️</div>
+            <h3>Flash Voucher Aktif</h3>
+            <p>Klaim potongan langsung hingga Rp50.000 untuk transaksi pertama katalog hari ini.</p>
+        </div>
+
+        <!-- Bento 3: Pengiriman Cepat -->
+        <div class="bento-box bento-sub2">
+            <div class="bento-icon">⚡</div>
+            <h4>Same-Day Dispatch</h4>
+            <p>Pesanan diproses langsung dari gudang kota terdekat.</p>
+        </div>
+
+        <!-- Bento 4: CS & Bantuan -->
+        <div class="bento-box bento-sub3">
+            <div class="bento-icon">💬</div>
+            <h4>Bantuan 24/7</h4>
+            <p>Layanan konsultasi pesanan dan komplain kapan pun.</p>
+        </div>
+    </section>
+
+    <!-- KATEGORI PILL SELECTOR -->
+    <div class="kategori-container">
+        <div class="kategori-scroll">
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-all" checked>
+                <span>Semua Produk</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-pakaian">
+                <span>👕 Pakaian</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-sepatu">
+                <span>👟 Sepatu</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-celana">
+                <span>👖 Celana</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-jacket">
+                <span>🧥 Jaket</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-topi">
+                <span>🧢 Topi</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-tas">
+                <span>🎒 Tas</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-alattulis">
+                <span>✏️ Alat Tulis</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-komputer">
+                <span>💻 Komputer</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- TAB SORTING BAR -->
+    <div class="filter-tab-bar">
+        <button type="button" class="tab-btn active" data-sort="terkait">Terkait</button>
+        <button type="button" class="tab-btn" data-sort="terlaris">Terlaris</button>
+        <button type="button" class="tab-btn" data-sort="terbaru">Terbaru</button>
+    </div>
+
+    <!-- GRID KATALOG PRODUK -->
+    <main id="katalogProduk"></main>
+
+    <!-- PAGINASI HALAMAN -->
+    <div id="paginasiProduk" class="paginasi-container"></div>
+
+    <!-- JAVASCRIPT ENGINE -->
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA MARKET — Futuristic Curated Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-butuh-login="false">
+
+    <!-- FLOATING DOCK NAVBAR -->
+    <!-- WRAPPER LUAR NAVIGASI MELAYANG -->
+    <div class="navbar-outer-wrapper">
+
+        <!-- TOMBOL ABOUT MELAYANG TERPISAH (SATELLITE ORB) -->
+        <button type="button" id="btnBukaAbout" class="btn-about-floating" title="Tentang Nexora Market">
+            ⓘ
+        </button>
+
+        <!-- FLOATING DOCK NAVBAR UTAMA -->
+        <nav class="navbar-nexora">
+            <a href="index.html" class="brand-logo-nexora">NEXORA<span>.</span></a>
+
+            <div class="search-capsule">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="inputPencarian" placeholder="Cari perlengkapan, apparel, aksesori..."
+                    autocomplete="off">
+            </div>
+
+            <div class="nav-action-group">
+                <button type="button" class="btn-toggle-theme" title="Ubah Tema">🌙</button>
+                <a href="html/keranjang.html" class="tombol-keranjang" title="Keranjang Belanja">
+                    🛒 <span class="badge-keranjang" hidden>0</span>
+                </a>
+                <span id="greetingArea" class="user-greeting" hidden></span>
+                <a href="profile.html" id="navProfile" class="btn-dock-profile" hidden>Profil</a>
+                <a href="html/login_daftar.html" id="navAuth" class="btn-dock-login">Masuk / Daftar</a>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- POP-UP MODAL ABOUT -->
+    <div id="modalAbout" class="overlay-produk" hidden>
+        <div class="kartu-modal-produk modal-about-card">
+            <button type="button" class="tutup-modal-produk" id="btnTutupAbout">×</button>
+            <div class="modal-about-icon-big">ⓘ</div>
+            <h3 class="modal-about-judul">Tentang NEXORA MARKET</h3>
+            <p class="modal-about-deskripsi">
+                <strong>NEXORA Market</strong> adalah platform e-commerce katalog terkurasi masa depan dengan arsitektur
+                modern. Kami menghubungkan produk berkualitas standar ekspor dari produsen dan desainer independen
+                langsung ke tangan Anda.
+            </p>
+            <div class="modal-about-versi">
+                Versi 2.0.26 — Crafted with Minimalist Future-UI
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- MODAL ABOUT POP-UP -->
+    <div id="modalAbout" class="overlay-produk" hidden>
+        <div class="kartu-modal-produk modal-about-card">
+            <button type="button" class="tutup-modal-produk" id="btnTutupAbout">×</button>
+            <div class="modal-about-icon-big">ⓘ</div>
+            <h3 class="modal-about-judul">Tentang NEXORA MARKET</h3>
+            <p class="modal-about-deskripsi">
+                <strong>NEXORA Market</strong> adalah platform e-commerce katalog terkurasi masa depan dengan arsitektur
+                modern. Kami menghubungkan produk berkualitas standar ekspor dari produsen dan desainer independen
+                langsung ke tangan Anda.
+            </p>
+            <div class="modal-about-versi">
+                Versi 2.0.26 — Crafted with Minimalist Future-UI
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- ASYMMETRIC BENTO SHOWCASE HERO -->
+    <section class="bento-hero-section">
+        <!-- Bento 1: Showcase Utama -->
+        <div class="bento-box bento-main">
+            <span class="bento-tag">Curated Capsule 2026</span>
+            <h2>Definisikan Gaya Hidup Minimalis Masa Depan.</h2>
+            <p>Temukan kurasi apparel, perlengkapan esensial harian, dan teknologi berstandar presisi tinggi.</p>
+            <a href="#katalogProduk" class="bento-cta">Eksplorasi Katalog ↓</a>
+        </div>
+
+        <!-- Bento 2: Garansi & Otentikasi -->
+        <div class="bento-box bento-sub1">
+            <div class="bento-icon">🛡️</div>
+            <h3>Garansi Mutu 100%</h3>
+            <p>Material pilihan standar ekspor terverifikasi langsung dari pengrajin dan desainer independen.</p>
+        </div>
+
+        <!-- Bento 3: Logistik Cepat -->
+        <div class="bento-box bento-sub2">
+            <div class="bento-icon">⚡</div>
+            <h4>Ekspedisi Kilat</h4>
+            <p>Pengiriman serentak terintegrasi ke berbagai kota di seluruh Indonesia.</p>
+        </div>
+
+        <!-- Bento 4: Penawaran Terkalibrasi -->
+        <div class="bento-box bento-sub3">
+            <div class="bento-icon">🏷️</div>
+            <h4>Direct Pricing</h4>
+            <p>Harga terkalibrasi langsung tanpa margin perantara yang berlebihan.</p>
+        </div>
+    </section>
+
+    <!-- KATEGORI PILL SELECTOR -->
+    <div class="kategori-container">
+        <div class="kategori-scroll">
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-all" checked>
+                <span>Semua Produk</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-pakaian">
+                <span>👕 Pakaian</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-sepatu">
+                <span>👟 Sepatu</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-celana">
+                <span>👖 Celana</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-jacket">
+                <span>🧥 Jaket</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-topi">
+                <span>🧢 Topi</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-tas">
+                <span>🎒 Tas</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-alattulis">
+                <span>✏️ Alat Tulis</span>
+            </label>
+            <label class="pill-kategori">
+                <input type="radio" name="filter-kategori" id="cat-komputer">
+                <span>💻 Komputer</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- TAB SORTING BAR -->
+    <div class="filter-tab-bar">
+        <button type="button" class="tab-btn active" data-sort="terkait">Terkait</button>
+        <button type="button" class="tab-btn" data-sort="terlaris">Terlaris</button>
+        <button type="button" class="tab-btn" data-sort="terbaru">Terbaru</button>
+    </div>
+
+    <!-- KATALOG PRODUK GRID -->
+    <main id="katalogProduk"></main>
+
+    <!-- PAGINASI -->
+    <div id="paginasiProduk" class="paginasi-container"></div>
+
+    <!-- SCRIPT ENGINE -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

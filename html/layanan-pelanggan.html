@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="judul.layanan">Layanan Pelanggan — Nexora Market</title>
+    <link rel="icon" href="../asset/nexora.ico?v=4" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="../asset/nexora.svg?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="../asset/nexora.png?v=4">
+    <link rel="apple-touch-icon" href="../asset/nexora.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- Google Material Symbols: dipakai untuk seluruh ikon di situs ini (menggantikan emoji/stiker) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+</head>
+<body>
+
+    <header class="header-utama">
+        <div class="top-bar-nav">
+            <div class="top-bar-kiri">
+                <a href="bagianDalam.html" id="linkBeranda" class="link-beranda" data-i18n="nav.beranda">Beranda</a>
+                <a href="layanan-pelanggan.html" class="active" data-i18n="nav.bantuanPanduan">Bantuan & Panduan</a>
+            </div>
+            <div class="top-bar-kanan">
+                <span id="greetingArea" class="user-greeting js-greeting-area" hidden></span>
+                <a href="about.html" data-i18n="nav.tentangKami">Tentang Kami</a>
+                <a href="profile.html" id="navProfile" class="js-nav-profile" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span><span data-i18n="nav.profil"> Profil</span></a>
+                <a href="login_daftar.html" id="navAuth" class="js-nav-auth" data-i18n="nav.masukDaftar">Masuk / Daftar</a>
+                <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+                <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+            </div>
+        </div>
+
+        <!-- Header halaman ini tanpa kotak pencarian: kelas pembantu di bawah
+             menjaga logo tetap di kiri & ikon keranjang di kanan. -->
+        <div class="main-header-bar main-header-bar--tanpa-cari">
+            <a href="bagianDalam.html" class="brand-logo-nexora">
+                <span class="logo-icon"></span>
+                <span>Nexora Market</span>
+            </a>
+            <button type="button" id="btnMenuMobile" class="btn-hamburger" data-i18n-aria="nav.bukaMenu" aria-label="Buka menu"><span class="material-symbols-outlined" aria-hidden="true" translate="no">menu</span></button>
+            <a href="keranjang.html" class="cart-header-icon" data-i18n-title="nav.keranjangBelanja" title="Keranjang Belanja">
+                <span class="material-symbols-outlined" aria-hidden="true" translate="no">shopping_cart</span>
+                <span class="badge-keranjang" hidden>0</span>
+            </a>
+        </div>
+
+        <nav id="menuMobileDropdown" class="menu-mobile-dropdown" hidden>
+            <span class="user-greeting js-greeting-area" hidden></span>
+            <a href="bagianDalam.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">home</span><span data-i18n="nav.beranda"> Beranda</span></a>
+            <a href="profile.html" class="js-nav-profile" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span><span data-i18n="nav.profile"> Profile</span></a>
+            <a href="keranjang.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">shopping_cart</span><span data-i18n="nav.keranjang"> Keranjang</span></a>
+            <a href="layanan-pelanggan.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">help</span><span data-i18n="nav.bantuanPanduan"> Bantuan & Panduan</span></a>
+            <a href="about.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">info</span><span data-i18n="nav.tentangKami"> Tentang Kami</span></a>
+            <a href="login_daftar.html" class="js-nav-auth" data-i18n="nav.masukDaftar">Masuk / Daftar</a>
+            <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+            <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+        </nav>
+    </header>
+
+    <main class="utama">
+        <button type="button" class="btn-kembali" onclick="window.history.back()"><span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_back</span><span class="btn-kembali-label" data-i18n="nav.kembali"> Kembali</span></button>
+
+        <div class="breadcrumb-nav">
+            <a href="bagianDalam.html" class="link-beranda" data-i18n="nav.beranda">Beranda</a> &gt; <span data-i18n="layanan.breadcrumb">Layanan Pelanggan</span>
+        </div>
+
+        <div class="about-card-box about-card-box--jarak-bawah">
+            <h1 data-i18n="layanan.judul">Layanan Pelanggan</h1>
+            <p data-i18n="layanan.intro">Semua yang perlu kamu tahu soal belanja di Nexora Market — mulai dari cara pesan, kebijakan pengembalian, garansi, sampai bagaimana kami menjaga data pribadimu — ada di satu halaman ini.</p>
+        </div>
+
+        <nav class="layanan-nav-pills">
+            <a href="#bantuan-faq"><span class="material-symbols-outlined" aria-hidden="true" translate="no">help</span><span data-i18n="layanan.pilFaq"> Bantuan & FAQ</span></a>
+            <a href="#cara-pembelian"><span class="material-symbols-outlined" aria-hidden="true" translate="no">shopping_bag</span><span data-i18n="layanan.pilCara"> Cara Pembelian</span></a>
+            <a href="#pengembalian"><span class="material-symbols-outlined" aria-hidden="true" translate="no">assignment_return</span><span data-i18n="layanan.pilRetur"> Pengembalian Barang</span></a>
+            <a href="#garansi"><span class="material-symbols-outlined" aria-hidden="true" translate="no">verified_user</span><span data-i18n="layanan.pilGaransi"> Kebijakan Garansi</span></a>
+            <a href="#lacak-pesanan"><span class="material-symbols-outlined" aria-hidden="true" translate="no">inventory_2</span><span data-i18n="layanan.pilLacak"> Lacak Pesanan</span></a>
+            <a href="#metode-pembayaran"><span class="material-symbols-outlined" aria-hidden="true" translate="no">credit_card</span><span data-i18n="layanan.pilBayar"> Metode Pembayaran</span></a>
+            <a href="#kebijakan-privasi"><span class="material-symbols-outlined" aria-hidden="true" translate="no">lock</span><span data-i18n="layanan.pilPrivasi"> Kebijakan Privasi</span></a>
+        </nav>
+
+        <section id="bantuan-faq" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">help</span><span data-i18n="layanan.faqJudul"> Bantuan & FAQ</span></h2>
+            <div class="layanan-faq-item">
+                <strong data-i18n="layanan.faq1T">Bagaimana cara memesan produk di Nexora Market?</strong>
+                <p data-i18n="layanan.faq1J">Pilih produk yang kamu suka, masukkan ke keranjang, lalu lanjut ke checkout. Kamu perlu masuk atau daftar akun terlebih dahulu sebelum bisa menyelesaikan pesanan.</p>
+            </div>
+            <div class="layanan-faq-item">
+                <strong data-i18n="layanan.faq2T">Apakah saya wajib punya akun untuk belanja?</strong>
+                <p data-i18n="layanan.faq2J">Ya. Membuat akun membantu kami menyimpan alamat pengirimanmu dan menampilkan riwayat pesanan, supaya proses checkout berikutnya jadi lebih cepat.</p>
+            </div>
+            <div class="layanan-faq-item">
+                <strong data-i18n="layanan.faq3T">Berapa lama pesanan saya diproses?</strong>
+                <p data-i18n="layanan.faq3J">Pesanan umumnya diproses di hari yang sama setelah pembayaran dikonfirmasi, lalu diteruskan ke jasa ekspedisi untuk pengiriman.</p>
+            </div>
+            <div class="layanan-faq-item">
+                <strong data-i18n="layanan.faq4T">Bagaimana jika ada masalah dengan pesanan saya?</strong>
+                <p data-i18n="layanan.faq4J">Hubungi tim kami lewat email atau WhatsApp yang tertera di bagian bawah halaman ini, sertakan nomor pesananmu supaya lebih cepat ditangani.</p>
+            </div>
+        </section>
+
+        <section id="cara-pembelian" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">shopping_bag</span><span data-i18n="layanan.caraJudul"> Cara Pembelian</span></h2>
+            <ol>
+                <li data-i18n="layanan.cara1">Jelajahi katalog di halaman Beranda, gunakan pencarian atau filter kategori untuk menemukan produk yang kamu mau.</li>
+                <li data-i18n="layanan.cara2">Klik produk untuk melihat detail, pilih varian/ukuran bila tersedia, lalu tambahkan ke keranjang.</li>
+                <li data-i18n="layanan.cara3">Buka halaman Keranjang, centang barang yang ingin dibeli, lalu tekan tombol Checkout.</li>
+                <li data-i18n="layanan.cara4">Lengkapi alamat pengiriman (atau pakai alamat yang sudah tersimpan di profil), pilih metode pembayaran, dan terapkan kode kupon jika ada.</li>
+                <li data-i18n="layanan.cara5">Selesaikan pembayaran sesuai metode yang dipilih. Setelah berhasil, pesanan akan muncul di riwayat pesanan pada halaman Profil.</li>
+            </ol>
+        </section>
+
+        <section id="pengembalian" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">assignment_return</span><span data-i18n="layanan.returJudul"> Pengembalian Barang</span></h2>
+            <p data-i18n="layanan.returIntro">Kami ingin kamu puas dengan setiap pembelian. Barang dapat diajukan pengembalian/penukaran dengan ketentuan berikut:</p>
+            <ul>
+                <li><span data-i18n="layanan.retur1a">Pengajuan dilakukan maksimal </span><strong data-i18n="layanan.retur1b">7 hari</strong><span data-i18n="layanan.retur1c"> setelah barang diterima.</span></li>
+                <li data-i18n="layanan.retur2">Barang belum pernah dipakai, dicuci, atau dirusak, dan label/tag masih terpasang.</li>
+                <li data-i18n="layanan.retur3">Sertakan foto/video unboxing sebagai bukti pendukung jika barang diterima dalam kondisi cacat atau tidak sesuai pesanan.</li>
+                <li data-i18n="layanan.retur4">Ongkos kirim pengembalian ditanggung pembeli, kecuali kesalahan pengiriman berasal dari pihak Nexora Market (barang salah kirim, cacat produksi, dsb).</li>
+            </ul>
+            <p data-i18n="layanan.returPenutup">Untuk mengajukan pengembalian, hubungi tim layanan pelanggan kami dengan menyertakan nomor pesanan.</p>
+        </section>
+
+        <section id="garansi" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">verified_user</span><span data-i18n="layanan.garansiJudul"> Kebijakan Garansi</span></h2>
+            <p data-i18n="layanan.garansiIntro">Produk elektronik dan aksesoris tertentu (misalnya kategori Komputer) mendapat garansi resmi sesuai ketentuan dari merek terkait. Untuk produk fashion (pakaian, sepatu, tas, dsb), garansi berlaku terhadap cacat produksi, bukan kerusakan akibat pemakaian normal.</p>
+            <ul>
+                <li data-i18n="layanan.garansi1">Garansi cacat produksi berlaku 7 hari sejak barang diterima.</li>
+                <li data-i18n="layanan.garansi2">Barang pengganti akan dikirim setelah barang lama kami terima dan verifikasi selesai.</li>
+                <li data-i18n="layanan.garansi3">Kerusakan akibat kelalaian penggunaan (salah cuci, terkena bahan kimia, dll) di luar tanggungan garansi.</li>
+            </ul>
+        </section>
+
+        <section id="lacak-pesanan" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">inventory_2</span><span data-i18n="layanan.lacakJudul"> Lacak Pesanan</span></h2>
+            <p><span data-i18n="layanan.lacak1a">Status dan riwayat semua pesananmu bisa dilihat langsung di halaman </span><a href="profile.html" class="tautan-sorot-emas" data-i18n="layanan.lacak1b">Profil → Riwayat Pesanan</a><span data-i18n="layanan.lacak1c">. Di sana tercatat nomor pesanan, tanggal, produk yang dibeli, metode pembayaran, dan total pembayaran untuk tiap transaksi.</span></p>
+            <p data-i18n="layanan.lacak2">Kalau kamu butuh info pelacakan lebih detail dari pihak ekspedisi, hubungi tim kami dengan menyertakan nomor pesanan yang tertera di riwayat tersebut.</p>
+        </section>
+
+        <section id="metode-pembayaran" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">credit_card</span><span data-i18n="layanan.bayarJudul"> Metode Pembayaran</span></h2>
+            <p data-i18n="layanan.bayarIntro">Nexora Market mendukung beberapa metode pembayaran berikut saat checkout:</p>
+            <ul>
+                <li><strong data-i18n="layanan.bayarQrisNama">QRIS</strong><span data-i18n="layanan.bayarQrisDesk"> — satu kode QR yang bisa dipindai dari aplikasi DANA, GoPay, OVO, ShopeePay, atau m-banking yang mendukung QRIS. Kode QR dibuat unik untuk setiap transaksi dan berlaku selama 10 menit.</span></li>
+                <li><strong data-i18n="layanan.bayarDanaNama">DANA</strong><span data-i18n="layanan.bayarDanaDesk"> — pembayaran langsung memakai nomor akun DANA kamu.</span></li>
+                <li><strong data-i18n="layanan.bayarGopayNama">GoPay</strong><span data-i18n="layanan.bayarGopayDesk"> — pembayaran langsung memakai nomor akun GoPay kamu.</span></li>
+                <li><strong data-i18n="layanan.bayarCodNama">Bayar di Tempat (COD)</strong><span data-i18n="layanan.bayarCodDesk"> — bayar tunai ke kurir saat barang tiba di alamatmu.</span></li>
+            </ul>
+            <p data-i18n="layanan.bayarPenutup">Punya kode kupon? Kupon bisa diterapkan di halaman pembayaran sebelum menyelesaikan transaksi, dan potongan harganya akan otomatis mengurangi total tagihan.</p>
+        </section>
+
+        <section id="kebijakan-privasi" class="layanan-section">
+            <h2><span class="material-symbols-outlined" aria-hidden="true" translate="no">lock</span><span data-i18n="layanan.privasiJudul"> Kebijakan Privasi</span></h2>
+            <p data-i18n="layanan.privasiIntro">Privasimu penting buat kami. Berikut ringkasan bagaimana Nexora Market mengelola data pribadi pengguna:</p>
+            <ul>
+                <li><strong data-i18n="layanan.privasi1Nama">Data yang kami kumpulkan:</strong><span data-i18n="layanan.privasi1Desk"> nama, email, nomor HP, tanggal lahir, jenis kelamin, dan alamat pengiriman yang kamu masukkan saat mendaftar akun atau melakukan checkout.</span></li>
+                <li><strong data-i18n="layanan.privasi2Nama">Penggunaan data:</strong><span data-i18n="layanan.privasi2Desk"> data tersebut dipakai untuk memproses pesanan, mengirim barang ke alamat yang benar, serta menghubungimu terkait status pesanan.</span></li>
+                <li><strong data-i18n="layanan.privasi3Nama">Penyimpanan:</strong><span data-i18n="layanan.privasi3Desk"> data akun dan riwayat pesanan disimpan pada perangkat/browser yang kamu gunakan untuk mengakses situs ini.</span></li>
+                <li><strong data-i18n="layanan.privasi4Nama">Pembagian data ke pihak ketiga:</strong><span data-i18n="layanan.privasi4Desk"> kami tidak menjual data pribadimu. Data hanya dibagikan ke penyedia layanan pengiriman/pembayaran sebatas yang diperlukan untuk menyelesaikan transaksi.</span></li>
+                <li><strong data-i18n="layanan.privasi5Nama">Hak pengguna:</strong><span data-i18n="layanan.privasi5Desk"> kamu bisa memperbarui atau menghapus data pribadimu kapan saja lewat halaman Profil.</span></li>
+                <li><strong data-i18n="layanan.privasi6Nama">Keamanan:</strong><span data-i18n="layanan.privasi6Desk"> kami menerapkan langkah wajar untuk melindungi data pengguna, namun tidak ada sistem yang 100% bebas risiko — segera hubungi kami bila menemukan aktivitas mencurigakan pada akunmu.</span></li>
+            </ul>
+            <p data-i18n="layanan.privasiPenutup">Ada pertanyaan soal privasi datamu? Hubungi kami lewat kontak di bawah halaman ini.</p>
+        </section>
+    </main>
+
+    <footer class="kaki-marketplace">
+        <div class="footer-inner-wrapper">
+            <div class="footer-col">
+                <h4 data-i18n="footer.layananPelanggan">Layanan Pelanggan</h4>
+                <ul>
+                    <li><a href="layanan-pelanggan.html#bantuan-faq" data-i18n="footer.bantuanFaq">Bantuan & FAQ</a></li>
+                    <li><a href="layanan-pelanggan.html#cara-pembelian" data-i18n="footer.caraPembelian">Cara Pembelian</a></li>
+                    <li><a href="layanan-pelanggan.html#pengembalian" data-i18n="footer.pengembalian">Pengembalian Barang</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer.jelajahi">Jelajahi Nexora</h4>
+                <ul>
+                    <li><a href="about.html" data-i18n="nav.tentangKami">Tentang Kami</a></li>
+                    <li><a href="layanan-pelanggan.html#kebijakan-privasi" data-i18n="footer.kebijakanPrivasi">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer.metodePembayaran">Metode Pembayaran</h4>
+                <p data-i18n="footer.metodeDesk">QRIS, DANA, GoPay, dan Bayar di Tempat (COD).</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer.kontakKami">Kontak Kami</h4>
+                <p data-i18n="footer.email">Email: support@nexoramarket.id</p>
+                <p data-i18n="footer.wa">WhatsApp: +62 895-3686-27820</p>
+            </div>
+        </div>
+        <div class="footer-bottom-copy" data-i18n="footer.hakCipta">
+            &copy; 2026 Nexora Market. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+    <!-- bahasa.js WAJIB dimuat sebelum script.js -->
+    <script src="../js/bahasa.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

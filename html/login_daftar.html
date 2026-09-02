@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="judul.auth">Masuk / Daftar Akun — Nexora Market</title>
+    <link rel="icon" href="../asset/nexora.ico?v=4" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="../asset/nexora.svg?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="../asset/nexora.png?v=4">
+    <link rel="apple-touch-icon" href="../asset/nexora.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- Google Material Symbols: dipakai untuk seluruh ikon di situs ini (menggantikan emoji/stiker) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+</head>
+<body>
+
+    <header class="auth-header-bar">
+        <div class="auth-header-inner">
+            <div class="auth-header-kembali-wrapper">
+                <button type="button" class="btn-kembali btn-kembali--rapat" onclick="window.history.back()"><span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_back</span><span class="btn-kembali-label" data-i18n="nav.kembali"> Kembali</span></button>
+                <a href="../index.html" class="auth-logo-title">
+                    <span class="logo-icon auth-logo-icon-kecil"></span>
+                    <span>Nexora Market</span>
+                </a>
+            </div>
+            <div class="auth-header-kanan-wrapper">
+                <a href="../html/layanan-pelanggan.html" class="auth-help-link" data-i18n="nav.butuhBantuan">Butuh Bantuan?</a>
+                <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+                <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-main-wrapper">
+        <div class="auth-container-grid">
+            <div class="auth-banner-left">
+                <h1><span data-i18n="auth.bannerJudul1">Jual Beli Fashion Mudah di</span> <span data-i18n="auth.bannerBrand">Nexora</span></h1>
+                <p data-i18n="auth.bannerDesk">Bergabunglah dengan ribuan pengguna lainnya. Nikmati voucher belanja eksklusif, cashback mingguan, dan pengiriman kilat ke seluruh Indonesia.</p>
+                <div class="auth-stat-strip">
+                    <div class="auth-stat-box">
+                        <div class="auth-stat-val">100%</div>
+                        <div class="auth-stat-lbl" data-i18n="auth.statOri">Produk Original</div>
+                    </div>
+                    <div class="auth-stat-box">
+                        <div class="auth-stat-val">24/7</div>
+                        <div class="auth-stat-lbl" data-i18n="auth.statLayanan">Layanan Pelanggan</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="auth-card-wrapper">
+                <input type="checkbox" id="saklar-form" hidden>
+
+                <!-- FORM MASUK -->
+                <div class="form-masuk">
+                    <div class="auth-card-header">
+                        <h2 data-i18n="auth.masukJudul">Masuk ke Akun</h2>
+                    </div>
+                    <form>
+                        <div class="auth-form-group">
+                            <input type="email" id="loginEmail" data-i18n-ph="auth.phEmail" placeholder="Email Anda" required>
+                        </div>
+                        <div class="auth-form-group input-pwd-wrapper">
+                            <input type="password" id="loginPassword" data-i18n-ph="auth.phSandi" placeholder="Kata Sandi" required>
+                            <button type="button" class="btn-toggle-pwd" data-target="loginPassword" data-i18n-aria="auth.lihatSandi" aria-label="Lihat Password"><span class="material-symbols-outlined" aria-hidden="true" translate="no">visibility</span></button>
+                        </div>
+                        <button type="submit" class="btn-auth-submit" data-i18n="auth.btnMasuk">Masuk</button>
+                    </form>
+                    <div class="auth-toggle-link">
+                        <span data-i18n="auth.belumPunya">Belum punya akun? </span><label for="saklar-form" data-i18n="auth.daftarSekarang">Daftar sekarang</label>
+                    </div>
+                </div>
+
+                <!-- FORM DAFTAR -->
+                <div class="form-daftar">
+                    <div class="auth-card-header">
+                        <h2 data-i18n="auth.daftarJudul">Daftar Akun Baru</h2>
+                    </div>
+                    <form>
+                        <div class="auth-form-group">
+                            <input type="text" id="regNama" data-i18n-ph="auth.phNama" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="auth-form-group">
+                            <input type="email" id="regEmail" data-i18n-ph="auth.phEmail" placeholder="Email Anda" required>
+                        </div>
+                        <div class="auth-form-group input-pwd-wrapper">
+                            <input type="password" id="regPassword" data-i18n-ph="auth.phSandiBaru" placeholder="Kata Sandi (min. 8 karakter)" required>
+                            <button type="button" class="btn-toggle-pwd" data-target="regPassword" data-i18n-aria="auth.lihatSandi" aria-label="Lihat Password"><span class="material-symbols-outlined" aria-hidden="true" translate="no">visibility</span></button>
+                        </div>
+
+                        <div class="auth-form-group">
+                            <select id="regGender" required>
+                                <option value="" disabled selected hidden data-i18n="auth.phGender">Jenis Kelamin</option>
+                                <option value="L" data-i18n="auth.genderL">Laki-laki</option>
+                                <option value="P" data-i18n="auth.genderP">Perempuan</option>
+                            </select>
+                        </div>
+
+                        <div class="auth-form-group">
+                            <input type="date" id="regTanggalLahir" required>
+                        </div>
+
+                        <button type="submit" class="btn-auth-submit" data-i18n="auth.btnDaftar">Daftar</button>
+                    </form>
+                    <div class="auth-toggle-link">
+                        <span data-i18n="auth.sudahPunya">Sudah punya akun? </span><label for="saklar-form" data-i18n="auth.masukDiSini">Masuk di sini</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="kaki-marketplace">
+        <div class="footer-bottom-copy" data-i18n="footer.hakCipta">
+            &copy; 2026 Nexora Market. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+    <!-- bahasa.js WAJIB dimuat sebelum script.js -->
+    <script src="../js/bahasa.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

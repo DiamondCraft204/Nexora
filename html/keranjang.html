@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="judul.keranjang">Keranjang Belanja — Nexora Market</title>
+    <link rel="icon" href="../asset/nexora.ico?v=4" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="../asset/nexora.svg?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="../asset/nexora.png?v=4">
+    <link rel="apple-touch-icon" href="../asset/nexora.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- Google Material Symbols: dipakai untuk seluruh ikon di situs ini (menggantikan emoji/stiker) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+</head>
+<body data-butuh-login="true">
+
+   <header class="header-utama">
+    <div class="top-bar-nav">
+        <div class="top-bar-kiri">
+            <a href="#" data-i18n="nav.bantuan">Bantuan</a>
+        </div>
+        <div class="top-bar-kanan">
+            <span id="greetingArea" class="user-greeting js-greeting-area" hidden></span>
+            <a href="about.html" data-i18n="nav.tentang">Tentang</a>
+            <a href="profile.html" id="navProfile" class="js-nav-profile" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span><span data-i18n="nav.profil"> Profil</span></a>
+            <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+            <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+        </div>
+    </div>
+
+        <div class="main-header-bar">
+            <a href="bagianDalam.html" class="brand-logo-nexora">
+                <span class="logo-icon"></span>
+                <span data-i18n="nav.brandKeranjang">Nexora Market | Keranjang</span>
+            </a>
+            <button type="button" id="btnMenuMobile" class="btn-hamburger" data-i18n-aria="nav.bukaMenu" aria-label="Buka menu"><span class="material-symbols-outlined" aria-hidden="true" translate="no">menu</span></button>
+            <div class="search-container-bar">
+                <div class="search-box-bar">
+                    <input type="text" id="inputPencarian" data-i18n-ph="cari.ph.keranjang" placeholder="Cari di dalam keranjang...">
+                    <button type="button"><span class="material-symbols-outlined" aria-hidden="true" translate="no">search</span></button>
+                </div>
+            </div>
+        </div>
+
+        <nav id="menuMobileDropdown" class="menu-mobile-dropdown" hidden>
+            <span class="user-greeting js-greeting-area" hidden></span>
+            <a href="bagianDalam.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">home</span><span data-i18n="nav.beranda"> Beranda</span></a>
+            <a href="profile.html" class="js-nav-profile" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span><span data-i18n="nav.profile"> Profile</span></a>
+            <a href="keranjang.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">shopping_cart</span><span data-i18n="nav.keranjang"> Keranjang</span></a>
+            <a href="layanan-pelanggan.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">help</span><span data-i18n="nav.bantuanPanduan"> Bantuan & Panduan</span></a>
+            <a href="about.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">info</span><span data-i18n="nav.tentangKami"> Tentang Kami</span></a>
+            <a href="login_daftar.html" class="js-nav-auth" data-i18n="nav.masukDaftar">Masuk / Daftar</a>
+            <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+            <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+        </nav>
+    </header>
+
+    <main class="utama">
+        <button type="button" class="btn-kembali" onclick="window.history.back()"><span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_back</span><span class="btn-kembali-label" data-i18n="nav.kembali"> Kembali</span></button>
+        <div id="keranjangKosong" class="cart-empty-panel" hidden>
+            <p data-i18n="keranjang.kosong">Keranjang belanja kamu masih kosong</p>
+            <a href="bagianDalam.html" class="btn-checkout" data-i18n="keranjang.belanjaSekarang">Belanja Sekarang</a>
+        </div>
+
+        <div id="keranjangLayout">
+            <div class="cart-table-header">
+                <div><input type="checkbox" id="checkSemua" class="ceklis-item" checked></div>
+                <div data-i18n="keranjang.kolProduk">Produk</div>
+                <div data-i18n="keranjang.kolHarga">Harga Satuan</div>
+                <div data-i18n="keranjang.kolQty">Kuantitas</div>
+                <div data-i18n="keranjang.kolTotal">Total Harga</div>
+                <div data-i18n="keranjang.kolAksi">Aksi</div>
+            </div>
+
+            <div id="daftarKeranjang" class="keranjang-kiri"></div>
+
+            <div class="checkout-bottom-bar">
+                <div>
+                    <button id="btnKosongkan" class="btn-hapus-semua" data-i18n="keranjang.hapusSemua">Hapus Semua</button>
+                </div>
+                <div class="checkout-bar-kanan">
+                    <span class="checkout-label-total"><span data-i18n="keranjang.totalLabel1">Total (</span><span id="ringkasanTotalItem">0</span><span data-i18n="keranjang.totalLabel2"> produk):</span></span>
+                    <strong id="ringkasanTotalHarga" class="checkout-nilai-total">Rp0</strong>
+                    <button id="btnCheckout" class="btn-checkout" data-i18n="keranjang.checkout">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- bahasa.js WAJIB dimuat sebelum script.js -->
+    <script src="../js/bahasa.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

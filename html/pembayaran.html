@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="judul.bayar">Pembayaran — Nexora Market</title>
+    <link rel="icon" href="../asset/nexora.ico?v=4" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="../asset/nexora.svg?v=4">
+    <link rel="icon" type="image/png" sizes="192x192" href="../asset/nexora.png?v=4">
+    <link rel="apple-touch-icon" href="../asset/nexora.png?v=4">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- Google Material Symbols: dipakai untuk seluruh ikon di situs ini (menggantikan emoji/stiker) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+</head>
+<body data-butuh-login="true">
+
+   <header class="header-utama">
+    <div class="top-bar-nav">
+        <div class="top-bar-kiri">
+            <a href="#" data-i18n="nav.bantuan">Bantuan</a>
+        </div>
+        <div class="top-bar-kanan">
+            <span id="greetingArea" class="user-greeting js-greeting-area" hidden></span>
+            <a href="about.html" data-i18n="nav.tentang">Tentang</a>
+            <a href="profile.html" id="navProfile" class="js-nav-profile" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span><span data-i18n="nav.profil"> Profil</span></a>
+            <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+            <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+        </div>
+    </div>
+
+        <div class="main-header-bar">
+            <a href="bagianDalam.html" class="brand-logo-nexora">
+                <span class="logo-icon"></span>
+                <span data-i18n="nav.brandCheckout">Nexora Market | Checkout</span>
+            </a>
+            <button type="button" id="btnMenuMobile" class="btn-hamburger" data-i18n-aria="nav.bukaMenu" aria-label="Buka menu"><span class="material-symbols-outlined" aria-hidden="true" translate="no">menu</span></button>
+        </div>
+
+        <nav id="menuMobileDropdown" class="menu-mobile-dropdown" hidden>
+            <span class="user-greeting js-greeting-area" hidden></span>
+            <a href="bagianDalam.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">home</span><span data-i18n="nav.beranda"> Beranda</span></a>
+            <a href="profile.html" class="js-nav-profile" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">person</span><span data-i18n="nav.profile"> Profile</span></a>
+            <a href="keranjang.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">shopping_cart</span><span data-i18n="nav.keranjang"> Keranjang</span></a>
+            <a href="layanan-pelanggan.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">help</span><span data-i18n="nav.bantuanPanduan"> Bantuan & Panduan</span></a>
+            <a href="about.html"><span class="material-symbols-outlined" aria-hidden="true" translate="no">info</span><span data-i18n="nav.tentangKami"> Tentang Kami</span></a>
+            <a href="login_daftar.html" class="js-nav-auth" data-i18n="nav.masukDaftar">Masuk / Daftar</a>
+            <button type="button" class="btn-toggle-lang" data-i18n-title="bahasa.judul" title="Ganti Bahasa">ID</button>
+            <button type="button" class="btn-toggle-theme" data-i18n-title="tema.keGelap" title="Ganti Tema"></button>
+        </nav>
+    </header>
+
+    <main class="utama">
+        <button type="button" class="btn-kembali" onclick="window.history.back()"><span class="material-symbols-outlined" aria-hidden="true" translate="no">arrow_back</span><span class="btn-kembali-label" data-i18n="nav.kembali"> Kembali</span></button>
+        <div class="halaman-pembayaran" id="halamanPembayaran">
+            <form class="form-pembayaran" id="formPembayaran">
+                <section class="blok-form">
+                    <div class="header-alamat-pengiriman">
+                        <h3><span class="material-symbols-outlined" aria-hidden="true" translate="no">location_on</span><span data-i18n="bayar.alamatJudul"> Alamat Pengiriman</span></h3>
+                        <button type="button" id="btnEditAlamat" class="btn-edit-alamat-inline" hidden><span class="material-symbols-outlined" aria-hidden="true" translate="no">edit</span><span data-i18n="bayar.btnEdit"> Edit</span></button>
+                    </div>
+
+                    <div class="baris-penerima">
+                        <div class="grup-alamat-label">
+                            <label data-i18n="bayar.lblPenerima">Nama Penerima</label>
+                            <input type="text" id="inputNamaPenerima" data-i18n-ph="bayar.phPenerima" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="grup-alamat-label">
+                            <label data-i18n="bayar.lblHp">Nomor HP</label>
+                            <input type="tel" id="inputNoHp" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="grid-wilayah-alamat">
+                        <div class="grup-alamat-label">
+                            <label data-i18n="bayar.lblProvinsi">Provinsi</label>
+                            <select id="inputProvinsi" required>
+                                <option value="" disabled selected hidden data-i18n="bayar.phProvinsi">Pilih Provinsi</option>
+                        <option value="Aceh">Aceh</option>
+                        <option value="Sumatera Utara">Sumatera Utara</option>
+                        <option value="Sumatera Barat">Sumatera Barat</option>
+                        <option value="Riau">Riau</option>
+                        <option value="Kepulauan Riau">Kepulauan Riau</option>
+                        <option value="Jambi">Jambi</option>
+                        <option value="Sumatera Selatan">Sumatera Selatan</option>
+                        <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+                        <option value="Bengkulu">Bengkulu</option>
+                        <option value="Lampung">Lampung</option>
+                        <option value="DKI Jakarta">DKI Jakarta</option>
+                        <option value="Jawa Barat">Jawa Barat</option>
+                        <option value="Jawa Tengah">Jawa Tengah</option>
+                        <option value="DI Yogyakarta">DI Yogyakarta</option>
+                        <option value="Jawa Timur">Jawa Timur</option>
+                        <option value="Banten">Banten</option>
+                        <option value="Bali">Bali</option>
+                        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                        <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                        <option value="Kalimantan Barat">Kalimantan Barat</option>
+                        <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                        <option value="Kalimantan Timur">Kalimantan Timur</option>
+                        <option value="Kalimantan Utara">Kalimantan Utara</option>
+                        <option value="Sulawesi Utara">Sulawesi Utara</option>
+                        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                        <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                        <option value="Gorontalo">Gorontalo</option>
+                        <option value="Sulawesi Barat">Sulawesi Barat</option>
+                        <option value="Maluku">Maluku</option>
+                        <option value="Maluku Utara">Maluku Utara</option>
+                        <option value="Papua">Papua</option>
+                        <option value="Papua Barat">Papua Barat</option>
+                        <option value="Papua Selatan">Papua Selatan</option>
+                        <option value="Papua Tengah">Papua Tengah</option>
+                        <option value="Papua Pegunungan">Papua Pegunungan</option>
+                        <option value="Papua Barat Daya">Papua Barat Daya</option>
+                            </select>
+                        </div>
+                        <div class="grup-alamat-label">
+                            <label data-i18n="bayar.lblKota">Kota / Kabupaten</label>
+                            <input type="text" id="inputKota" data-i18n-ph="bayar.phKota" placeholder="Contoh: Kota Bandung" required>
+                        </div>
+                        <div class="grup-alamat-label">
+                            <label data-i18n="bayar.lblKecamatan">Kecamatan</label>
+                            <input type="text" id="inputKecamatan" data-i18n-ph="bayar.phKecamatan" placeholder="Contoh: Coblong" required>
+                        </div>
+                        <div class="grup-alamat-label">
+                            <label data-i18n="bayar.lblKodePos">Kode Pos</label>
+                            <input type="text" id="inputKodePos" placeholder="40132" inputmode="numeric" pattern="[0-9]*" maxlength="5" required>
+                        </div>
+                    </div>
+
+                    <div class="grup-alamat-label">
+                        <label data-i18n="bayar.lblDetailAlamat">Detail Alamat</label>
+                        <textarea id="inputAlamat" data-i18n-ph="bayar.phDetailAlamat" placeholder="Nama jalan, gedung, No. rumah, RT/RW, patokan" rows="3" required></textarea>
+                    </div>
+                </section>
+
+                <section class="blok-form">
+                    <h3><span class="material-symbols-outlined" aria-hidden="true" translate="no">credit_card</span><span data-i18n="bayar.metodeJudul"> Metode Pembayaran</span></h3>
+                    <label class="opsi-bayar">
+                        <input type="radio" name="metodeBayar" value="QRIS" checked>
+                        <span><span class="material-symbols-outlined" aria-hidden="true" translate="no">qr_code_2</span><span data-i18n="bayar.opsiQris"> QRIS (Bisa pakai DANA, GoPay, OVO, ShopeePay, M-Banking)</span></span>
+                    </label>
+                    <label class="opsi-bayar">
+                        <input type="radio" name="metodeBayar" value="DANA">
+                        <span><span class="material-symbols-outlined" aria-hidden="true" translate="no">smartphone</span><span data-i18n="bayar.opsiDana"> DANA</span></span>
+                    </label>
+                    <label class="opsi-bayar">
+                        <input type="radio" name="metodeBayar" value="GoPay">
+                        <span><span class="material-symbols-outlined" aria-hidden="true" translate="no">smartphone</span><span data-i18n="bayar.opsiGopay"> GoPay</span></span>
+                    </label>
+                    <label class="opsi-bayar">
+                        <input type="radio" name="metodeBayar" value="Bayar di Tempat (COD)">
+                        <span><span class="material-symbols-outlined" aria-hidden="true" translate="no">payments</span><span data-i18n="bayar.opsiCod"> Bayar di Tempat (COD)</span></span>
+                    </label>
+                </section>
+
+                <button type="submit" class="btn-bayar-sekarang" data-i18n="bayar.btnBayar">Bayar Sekarang</button>
+            </form>
+
+            <aside class="ringkasan-pesanan">
+                <h3 data-i18n="bayar.ringkasanJudul">Ringkasan Pembelian</h3>
+                <div id="daftarPesanan" class="daftar-pesanan"></div>
+
+                <div class="blok-kupon">
+                    <div class="input-kupon-wrapper" id="wrapperInputKupon">
+                        <div class="input-kupon-field">
+                            <span class="material-symbols-outlined ikon-kupon-input" aria-hidden="true" translate="no">confirmation_number</span>
+                            <input type="text" id="inputKodeKupon" data-i18n-ph="bayar.phKupon" placeholder="Masukkan kode kupon" maxlength="20">
+                        </div>
+                        <button type="button" id="btnTerapkanKupon" data-i18n="bayar.btnTerapkanKupon">Terapkan</button>
+                    </div>
+                    <div id="kuponAktifInfo" class="kupon-aktif-info" hidden>
+                        <span id="teksKuponAktif"></span>
+                        <button type="button" id="btnHapusKupon" data-i18n-aria="bayar.hapusKupon" aria-label="Hapus kupon"><span class="material-symbols-outlined" aria-hidden="true" translate="no">close</span></button>
+                    </div>
+                </div>
+
+                <div class="baris-ringkasan">
+                    <span data-i18n="bayar.subtotal">Subtotal Produk</span>
+                    <span id="pesananSubtotal">Rp0</span>
+                </div>
+                <div class="baris-ringkasan">
+                    <span data-i18n="bayar.ongkir">Ongkos Kirim</span>
+                    <span id="pesananOngkir">Rp0</span>
+                </div>
+                <div class="baris-ringkasan" id="barisDiskon" hidden>
+                    <span data-i18n="bayar.diskon">Diskon Kupon</span>
+                    <span id="pesananDiskon" class="nilai-diskon">-Rp0</span>
+                </div>
+                <div class="baris-ringkasan total">
+                    <span data-i18n="bayar.total">Total Pembayaran</span>
+                    <span id="pesananTotal">Rp0</span>
+                </div>
+            </aside>
+        </div>
+
+        <div id="keranjangKosongBayar" class="cart-empty-panel" hidden>
+            <p data-i18n="bayar.kosong">Belum ada produk terpilih untuk dibayar.</p>
+            <a href="bagianDalam.html" class="btn-checkout" data-i18n="bayar.kembaliBelanja">Kembali Belanja</a>
+        </div>
+    </main>
+
+    <!-- MODAL PEMBAYARAN LANJUTAN (QRIS / E-WALLET) -->
+    <div id="modalBayarLanjutan" class="overlay-sukses" hidden>
+        <div class="kartu-sukses kartu-modal-bayar">
+            <h3 id="judulModalBayar" data-i18n="bayar.modalJudul">Pembayaran</h3>
+
+            <!-- KONTEN QRIS -->
+            <div id="wadahQrisLanjutan" hidden>
+                <div class="qris-merchant-badge">
+                    <span><span class="material-symbols-outlined" aria-hidden="true" translate="no">storefront</span></span>
+                    <div>
+                        <strong id="qrisMerchantNama">NEXORA MARKET</strong>
+                        <span><span data-i18n="bayar.qrisDiterima1">Diterima ke akun </span><b id="qrisMerchantTerhubung">DANA</b><span data-i18n="bayar.qrisDiterima2"> merchant · NMID </span><span id="qrisMerchantNmid">ID10243879012</span></span>
+                    </div>
+                </div>
+                <img id="gambarQrisLanjutan" class="qris-gambar" src="" data-i18n-alt="bayar.qrisAlt" alt="Kode QRIS Pembayaran">
+                <p class="qris-peringatan-lokal" id="peringatanQrLokal" hidden data-i18n="bayar.qrisPeringatanLokal">Situs sedang dijalankan di localhost, jadi tautan di dalam QR ini tidak bisa dibuka dari HP. Akses situs lewat IP jaringan (mis. http://192.168.1.5:5500) atau isi NEXORA_BASIS_URL_PUBLIK di js/script.js.</p>
+                <p class="qris-petunjuk-scan" data-i18n="bayar.qrisPetunjuk">Pindai QR ini dengan kamera HP kamu. Halaman pembayaran berisi rincian belanjaan akan terbuka di HP.</p>
+                <p class="qris-nominal"><span data-i18n="bayar.qrisNominal">Total Bayar: </span><strong id="qrisNominal">Rp0</strong></p>
+                <p class="qris-ref"><span data-i18n="bayar.qrisRef">Kode Referensi: </span><span id="qrisKodeRef">-</span></p>
+                <p class="qris-timer"><span data-i18n="bayar.qrisTimer1">Selesaikan dalam </span><strong id="qrisTimer">10:00</strong></p>
+                <p class="qris-catatan" data-i18n="bayar.qrisCatatan">Setiap transaksi memiliki kode QR yang berbeda dan hanya berlaku satu kali. Pindai memakai kamera HP atau aplikasi pemindai QR untuk membuka halaman pembayaran.</p>
+                <!-- Tautan cadangan: berguna saat menguji di komputer tanpa memindai QR -->
+                <a id="tautanQrisLanjutan" class="qris-tautan-buka" href="#" target="_blank" rel="noopener" hidden data-i18n="bayar.qrisTautan">Buka halaman pembayaran di perangkat ini</a>
+            </div>
+
+            <!-- KONTEN E-WALLET (DANA / GOPAY) -->
+            <div id="wadahEwalletLanjutan" hidden>
+                <p class="ewallet-hint" data-i18n="bayar.ewalletHint">Masukkan nomor HP yang terdaftar untuk melanjutkan pembayaran. Kamu akan menerima permintaan pembayaran (push notification) di aplikasi.</p>
+                <input type="tel" id="inputHpEwallet" data-i18n-ph="bayar.phEwallet" placeholder="Masukkan Nomor HP" class="input-ewallet">
+            </div>
+
+            <div class="modal-bayar-aksi">
+                <button type="button" id="btnBatalBayar" class="btn-modal-batal" data-i18n="bayar.btnBatal">Batal</button>
+                <button type="button" id="btnKonfirmasiBayar" class="btn-modal-konfirmasi" data-i18n="bayar.btnSudahBayar">Saya Sudah Bayar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlaySukses" class="overlay-sukses" hidden>
+        <div class="kartu-sukses">
+            <span class="ikon-sukses"><span class="material-symbols-outlined" aria-hidden="true" translate="no">check_circle</span></span>
+            <h3 data-i18n="bayar.suksesJudul">Pesanan Berhasil Dibuat!</h3>
+            <p id="teksNomorPesanan"></p>
+            <a href="bagianDalam.html" class="btn-checkout" data-i18n="bayar.kembaliBeranda">Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <!-- bahasa.js WAJIB dimuat sebelum script.js -->
+    <script src="../js/bahasa.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
